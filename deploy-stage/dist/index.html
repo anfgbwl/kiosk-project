@@ -35,14 +35,13 @@
    <svg id="power-chart" viewBox="0 0 940 280" role="img" aria-label="오늘 시간별 발전출력 그래프"></svg><p id="chart-empty" hidden>오늘의 발전 데이터가 없습니다.</p>
   </section>
   <section class="card promo"><div class="leaf-art" aria-hidden="true"><img src="assets/approved-day.png" alt=""></div><div class="icon-tile"><svg><use href="#leaf"/></svg></div><div class="promo-copy"><h2>우리 학교의<br><em>지속가능한 미래</em>를 함께 만들어요.</h2><p>학교의 태양광 발전이 탄소를 줄이고,<br>더 깨끗한 학교 환경을 만듭니다.</p></div></section>
-  <footer class="day-footer"><div class="logos"><img class="education-logo" src="assets/busan-education-white.svg" alt="부산광역시교육청"><i></i><img class="hanbit-logo" src="assets/hanbit-combination-white.svg" alt="한빛이노텍"></div><div class="data-note"><span class="sample-label" hidden>검수용 예시 데이터</span><time id="data-timestamp">데이터 기준 없음</time><span id="data-warning"></span></div></footer>
+  <footer class="day-footer"><div class="logos"><img class="education-logo" src="assets/busan-education-white.svg" alt="부산광역시교육청"><i></i><img class="hanbit-logo" src="assets/hanbit-combination-white.svg" alt="한빛이노텍"></div><div class="data-note"><time id="data-timestamp">데이터 기준 없음</time><span id="data-warning"></span></div></footer>
  </section>
  <section id="night-screen" class="screen night" aria-label="야간 대기 화면" hidden>
   <div class="night-art" role="img" aria-label="달과 별 아래 이불을 덮고 잠든 태양광 패널 캐릭터"><img src="assets/approved-night.png" alt=""></div>
   <div class="night-title"><h1>야간 대기 중</h1><p>다음 햇살 대기</p></div>
   <div class="night-metrics"><section class="card night-energy"><div class="icon-tile"><svg><use href="#sun"/></svg></div><div><h2>오늘 발전량</h2><p class="number"><b data-bind="todayEnergy">—</b><span>kWh</span></p><span id="night-no-data" hidden>오늘 데이터 없음</span></div></section><section class="card night-sunrise"><div class="icon-tile"><svg><use href="#sunrise"/></svg></div><div><h2>다음 일출</h2><p id="next-sunrise">—</p><span>한국시각</span></div></section></div>
   <p class="connection"><svg><use href="#cloud"/></svg><span id="connection-label">연결 확인 중 · 마지막 확인 —</span></p>
-  <span class="sample-label night-sample" hidden>검수용 예시 데이터</span>
   <footer class="night-footer"><div class="logos"><img class="education-logo" src="assets/busan-education-white.svg" alt="부산광역시교육청"><i></i><img class="hanbit-logo" src="assets/hanbit-combination-white.svg" alt="한빛이노텍"></div></footer>
  </section>
 </main>
