@@ -12,12 +12,7 @@
 .mode-toggle {
   position: fixed;
 
-  /* 화면 높이의 중앙에 고정 */
-  top: 50%;
-
-  /* 9:16 키오스크 화면의 오른쪽 가장자리에 정렬 */
-=======
-  top: 50%;
+  top: 90%;
   right: max(
     12px,
     calc((100vw - min(100vw, 56.25vh)) / 2 + 14px)
