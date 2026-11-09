@@ -7,3 +7,41 @@
 .night-art{left:210px;top:340px;width:685px;height:480px;mask-image:linear-gradient(to right,transparent,black 38px,black calc(100% - 38px),transparent),linear-gradient(to bottom,transparent,black 55px,black calc(100% - 40px),transparent);mask-composite:intersect}
 .night-art img{left:-210px;top:-340px}
 .night-energy>div:last-child{min-width:0}.night-sunrise>div:last-child{min-width:0}
+/* 주간/야간 원형 플로팅 버튼 */
+.mode-toggle {
+  position: absolute;
+  top: 1650px;
+  right: 80px;
+  z-index: 100;
+
+  width: 68px;
+  height: 68px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  border: 1px solid rgba(137, 245, 184, 0.45);
+
+  background: rgba(30, 55, 65, 0.88);
+  color: #ffffff;
+
+  font-size: 36px;
+  cursor: pointer;
+
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.25);
+
+  transition: background 0.2s ease,
+              transform 0.2s ease;
+}
+
+.mode-toggle:hover {
+  background: rgba(55, 105, 88, 0.95);
+  transform: scale(1.06);
+}
+
+.mode-toggle:focus-visible {
+  outline: 3px solid #89f5b8;
+  outline-offset: 3px;
+}
