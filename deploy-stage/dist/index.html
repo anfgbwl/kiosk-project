@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b1724">
+  <title>학교 태양광 에너지 키오스크</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<svg class="symbol-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+ <symbol id="sun" viewBox="0 0 80 80"><circle cx="40" cy="40" r="16"/><path d="M40 5v10m0 50v10M5 40h10m50 0h10M15 15l7 7m36 36 7 7M15 65l7-7m36-36 7-7"/></symbol>
+ <symbol id="sunrise" viewBox="0 0 80 80"><path d="M5 58h70M12 65h56M23 52a17 17 0 0 1 34 0M40 12v10M12 29l8 8m40 0 8-8M5 49h9m52 0h9"/></symbol>
+ <symbol id="leaf" viewBox="0 0 48 48"><path d="M9 35C1 14 23 11 39 6c0 26-11 35-25 29M6 42c6-14 13-19 24-25"/></symbol>
+ <symbol id="layers" viewBox="0 0 48 48"><path d="m6 14 18-9 18 9-18 9Zm0 10 18 9 18-9M6 34l18 9 18-9"/></symbol>
+ <symbol id="bolt" viewBox="0 0 48 48"><path fill="currentColor" stroke="none" d="M27 3 9 27h14l-3 18 20-27H26Z"/></symbol>
+ <symbol id="cloud" viewBox="0 0 48 48"><path d="M12 36h25c10-1 10-15 1-17C37 3 14 3 13 18 1 17 0 36 12 36Z"/></symbol>
+ <symbol id="bars" viewBox="0 0 48 48"><path d="M8 35v8m13-18v18m14-29v29" stroke-width="7"/></symbol>
+ <linearGradient id="smileGradient" x2="1" y2="1"><stop stop-color="#dbfff0"/><stop offset="1" stop-color="#8bf3b4"/></linearGradient>
+</defs></svg>
+<main id="kiosk" class="kiosk" aria-label="학교 태양광 에너지 현황">
+ <header class="header"><div class="school"><strong data-bind="schoolName">푸른빛중학교</strong><span>태양광 에너지 키오스크</span></div><time id="clock"></time></header>
+ <span class="accent-line" aria-hidden="true"></span>
+ <section id="day-screen" class="screen day" aria-label="주간 발전 현황">
+  <div class="school-art" aria-hidden="true"><img src="assets/approved-day.png" alt=""></div>
+  <div class="hero-copy"><h1>우리 학교<br><em>태양광 발전 현황</em></h1><p>학교 옥상 태양광으로<br>깨끗한 에너지를 만들고 있어요.</p></div>
+  <section class="card energy-card"><div class="icon-tile"><svg><use href="#sun"/></svg></div><div class="daily-total"><h2>오늘 발전량</h2><p class="number"><b data-bind="todayEnergy">—</b><span>kWh</span></p></div><div class="generation-status"><svg class="smile" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="47" fill="url(#smileGradient)"/><g stroke="#09271d" fill="#09271d" stroke-linecap="round"><ellipse cx="35" cy="39" rx="4" ry="5"/><ellipse cx="65" cy="39" rx="4" ry="5"/><path id="smile-mouth" d="M32 62Q50 83 69 62" fill="none" stroke-width="6"/></g></svg><div><h2>발전 상태</h2><strong id="generation-label">데이터 없음</strong><p id="generation-description">계측 데이터 수신을<br>기다리고 있어요.</p></div></div></section>
+  <div class="metrics">
+   <section class="card metric"><h2><svg><use href="#bolt"/></svg>현재 발전출력</h2><p><b data-bind="currentPower">—</b><span>kW</span></p></section>
+   <section class="card metric"><h2><svg><use href="#layers"/></svg>누적 발전량</h2><p><b data-bind="totalEnergy">—</b><span>kWh</span></p></section>
+   <section class="card metric"><h2><svg><use href="#leaf"/></svg>탄소 저감 효과</h2><p><b data-bind="carbonReduction">—</b><span>tCO₂</span></p></section>
+  </div>
+  <section class="card chart-card"><div class="chart-heading"><h2><svg><use href="#bars"/></svg>오늘의 발전 추이</h2><div class="chart-total">오늘 발전량 <b data-bind="todayEnergy">—</b> <span>kWh</span></div></div>
+   <div class="environment"><span>설치용량 <b data-bind="capacity">—</b> kW</span><span>일사량 <b data-bind="irradiance">—</b> W/m²</span><span>온도 <b data-bind="temperature">—</b> °C</span></div>
+   <svg id="power-chart" viewBox="0 0 940 280" role="img" aria-label="오늘 시간별 발전출력 그래프"></svg><p id="chart-empty" hidden>오늘의 발전 데이터가 없습니다.</p>
+  </section>
+  <section class="card promo"><div class="leaf-art" aria-hidden="true"><img src="assets/approved-day.png" alt=""></div><div class="icon-tile"><svg><use href="#leaf"/></svg></div><div class="promo-copy"><h2>우리 학교의<br><em>지속가능한 미래</em>를 함께 만들어요.</h2><p>학교의 태양광 발전이 탄소를 줄이고,<br>더 깨끗한 학교 환경을 만듭니다.</p></div></section>
+  <footer class="day-footer"><div class="logos"><img class="education-logo" src="assets/busan-education-white.svg" alt="부산광역시교육청"><i></i><img class="hanbit-logo" src="assets/hanbit-white.svg" alt="한빛이노텍"></div><div class="data-note"><span class="sample-label" hidden>검수용 예시 데이터</span><time id="data-timestamp">데이터 기준 없음</time><span id="data-warning"></span></div></footer>
+ </section>
+ <section id="night-screen" class="screen night" aria-label="야간 대기 화면" hidden>
+  <div class="night-art" role="img" aria-label="달과 별 아래 이불을 덮고 잠든 태양광 패널 캐릭터"><img src="assets/approved-night.png" alt=""></div>
+  <div class="night-title"><h1>야간 대기 중</h1><p>다음 햇살 대기</p></div>
+  <div class="night-metrics"><section class="card night-energy"><div class="icon-tile"><svg><use href="#sun"/></svg></div><div><h2>오늘 발전량</h2><p class="number"><b data-bind="todayEnergy">—</b><span>kWh</span></p><span id="night-no-data" hidden>오늘 데이터 없음</span></div></section><section class="card night-sunrise"><div class="icon-tile"><svg><use href="#sunrise"/></svg></div><div><h2>다음 일출</h2><p id="next-sunrise">—</p><span>한국시각</span></div></section></div>
+  <p class="connection"><svg><use href="#cloud"/></svg><span id="connection-label">연결 확인 중 · 마지막 확인 —</span></p>
+  <span class="sample-label night-sample" hidden>검수용 예시 데이터</span>
+  <footer class="night-footer"><div class="logos"><img class="education-logo" src="assets/busan-education-white.svg" alt="부산광역시교육청"><i></i><img class="hanbit-logo" src="assets/hanbit-white.svg" alt="한빛이노텍"></div></footer>
+ </section>
+</main>
+<script src="config.js"></script><script src="demo-data.js"></script><script src="assets/suncalc.js"></script><script src="core.js"></script><script src="app.js"></script>
+</body></html>
