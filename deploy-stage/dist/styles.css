@@ -7,33 +7,39 @@
 .night-art{left:210px;top:340px;width:685px;height:480px;mask-image:linear-gradient(to right,transparent,black 38px,black calc(100% - 38px),transparent),linear-gradient(to bottom,transparent,black 55px,black calc(100% - 40px),transparent);mask-composite:intersect}
 .night-art img{left:-210px;top:-340px}
 .night-energy>div:last-child{min-width:0}.night-sunrise>div:last-child{min-width:0}
-/* 주간/야간 원형 플로팅 버튼 */
+
+/* 주간/야간 전환 플로팅 버튼 */
 .mode-toggle {
   position: fixed;
-  top: 50%;
+
+  top: 90%;
   right: max(
     12px,
     calc((100vw - min(100vw, 56.25vh)) / 2 + 14px)
   );
-  z-index: 100;
 
-  width: 68px;
-  height: 68px;
+  z-index: 9999;
+
+  /* 화면 크기에 따른 버튼 크기 */
+  width: clamp(46px, 5vmin, 64px);
+  height: clamp(46px, 5vmin, 64px);
 
   display: flex;
   align-items: center;
   justify-content: center;
 
   border-radius: 50%;
-  border: 1px solid rgba(137, 245, 184, 0.45);
+  border: 1px solid rgba(137, 245, 184, 0.5);
 
-  background: rgba(30, 55, 65, 0.88);
+  background: rgba(30, 55, 65, 0.92);
   color: #ffffff;
 
-  font-size: 36px;
+  font-size: clamp(24px, 3vmin, 34px);
   cursor: pointer;
 
-  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.25);
+  transform: translateY(-50%);
+
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
 
   transform: translateY(-50%);
 }
