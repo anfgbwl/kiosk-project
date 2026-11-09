@@ -11,6 +11,13 @@
 .mode-toggle {
   position: fixed;
 
+  top: 50%;
+  right: max(
+    12px,
+    calc((100vw - min(100vw, 56.25vh)) / 2 + 14px)
+  );
+  z-index: 100;
+
   /* 화면 높이의 중앙에 고정 */
   top: 50%;
 
@@ -43,8 +50,7 @@
 
   box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
 
-  transition: background 0.2s ease,
-              transform 0.2s ease;
+  transform: translateY(-50%);
 }
 
 .mode-toggle:hover {

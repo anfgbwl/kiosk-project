@@ -16,6 +16,8 @@
   top: 50%;
 
   /* 9:16 키오스크 화면의 오른쪽 가장자리에 정렬 */
+=======
+  top: 50%;
   right: max(
     12px,
     calc((100vw - min(100vw, 56.25vh)) / 2 + 14px)
@@ -44,8 +46,7 @@
 
   box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
 
-  transition: background 0.2s ease,
-              transform 0.2s ease;
+  transform: translateY(-50%);
 }
 
 .mode-toggle:hover {
